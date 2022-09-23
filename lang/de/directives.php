@@ -12,15 +12,16 @@ return [
 
     'editWithName' => ':name bearbeiten',
     'edit' => 'bearbeiten',
-
     'read' => 'lesen',
+    
+    'delete' => 'Löschen',
+    'save' => 'Speichern',
 
     'name' => 'Name',
     'date' => 'Datum',
     'action' => 'Aktion',
 
     'export' => 'Exportieren',
-    'save' => 'Speichern',
     'back' => 'Zurück',
 
     'areYouSure' => 'Sind Sie sich sicher?',

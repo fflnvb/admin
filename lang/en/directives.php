@@ -12,15 +12,16 @@ return [
 
     'editWithName' => 'Edit :Name',
     'edit' => 'edit',
-
     'read' => 'read',
+    
+    'delete' => 'Delete',
+    'save' => 'Save',
 
     'name' => 'Name',
     'date' => 'Date',
     'action' => 'Action',
 
     'export' => 'Export',
-    'save' => 'Save',
     'back' => 'Back',
 
     'areYouSure' => 'Are you sure?',

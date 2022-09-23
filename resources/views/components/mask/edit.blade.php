@@ -11,7 +11,7 @@
             @method('DELETE')
             @csrf
             <button type="submit" onclick="return confirm('{{ __('admin::directives.areYouSure') }}')"
-                class="btn btn-danger"><b>{{ __('Löschen') }}</b>
+                class="btn btn-danger"><b>{{ __('admin::directives.delete') }}</b>
             </button>
         </form>
         @endisset
