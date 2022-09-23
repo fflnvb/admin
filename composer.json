@@ -1,0 +1,27 @@
+{
+    "name": "fflnvb/admin",
+    "description": "Simple administration backend for Laravel",
+    "type": "library",
+
+    "authors": [
+        {
+            "name": "Jan Pfau",
+            "email": "pfau@fflnvb.de",
+            "homepage": "https://fflnvb.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "fflnvb\\admin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "fflnvb\\admin\\AdminServiceProvider"
+            ]
+        }
+    }
+}
