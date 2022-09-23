@@ -39,7 +39,7 @@ Please stick to the following order on using the blade components
 
 
 ### mask.index
-```blade
+```Blade
 <x-admin::mask.index :name="$name" :routeName="$routeName" :single="$single">{slot}</x-admin::mask.index>
 ```
 
