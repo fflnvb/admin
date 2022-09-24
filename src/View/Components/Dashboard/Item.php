@@ -48,7 +48,7 @@ class Item extends Component
         $namespace = '\App\\Models\\'.$model;
         $tempModel = new $namespace;
 
-        $lastEditItem = $tempModel::orderBy('updated_at','DESC')->first();
+        $lastEditItem = $tempModel::orderBy('updated_at','DESC')->first() ?? new $namespace;
         $this->lastEditItem = $lastEditItem;
 
         $this->count = $tempModel::count();
