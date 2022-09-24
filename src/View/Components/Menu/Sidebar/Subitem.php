@@ -3,6 +3,7 @@
 namespace fflnvb\admin\View\Components\Menu\Sidebar;
 
 use Illuminate\View\Component;
+use Illuminate\Support\Str;
 
 
 class Subitem extends Component
@@ -61,7 +62,7 @@ class Subitem extends Component
             $subRoute = Str::beforeLast($item['route'], '.');
             $isCurrentRoute = Str::contains(request()->route()->getName(), $subRoute);
         }
-        
+
         return $isCurrentRoute;
     }
 
