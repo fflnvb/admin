@@ -4,7 +4,12 @@
     <a href="{{ route('admin.' . $routeName . '.create') }}" role="button" class="btn btn-success">{{ __('admin::directives.createWithName', ['name' => $single]) }}</a>
     @endif
 </div>
-
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <div class="list-group shadow">
     {{ $slot }}
 </div>
