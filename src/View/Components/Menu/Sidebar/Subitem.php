@@ -29,21 +29,41 @@ class Subitem extends Component
     public function __construct($subitem)
     {
         $this->subitem = $subitem;
-        $this->active = false;
-        // Check if route qualifies subitem to be displayed as active
-        if(request()->routeIs($subitem['route'])) {
-            $this->active = true;
-        }
-        if(isset($item['alias'])) {
-            if(is_string($subitem['alias'])) {
-                $subitem['alias'] = [$subitem['alias']];
+        $this->active = $this->isCurrentRoute($this->subitem);
+    }
+
+    /**
+     * Check if route and alias of given item is current route
+     *
+     * @return bool
+     */
+    public function isCurrentRoute($items)
+    {
+        $isCurrentRoute = false;
+        foreach($items as $item) {
+            // Check direct match
+            if(request()->routeIs($item['route'])) {
+                $isCurrentRoute = true;
             }
-            foreach ($subitem['alias'] as $alias) {
-                if(request()->routeIs($alias)) {
-                    $this->active = true;
+            // Check alias match
+            if(isset($item['alias'])) {
+                if(is_string($item['alias'])) {
+                    $item['alias'] = [$item['alias']];
+                }
+                foreach ($item['alias'] as $alias) {
+                    if(request()->routeIs($alias)) {
+                        $isCurrentRoute = true;
+                    }
                 }
             }
+            // Check subitem for Resource Controllers being references
+            if(isset($item['resource']) && $item['resource']) {
+                $subRoute = Str::beforeLast($item['route'], '.');
+                $isCurrentRoute = Str::contains(request()->route()->getName(), $subRoute);
+            }
+
         }
+        return $isCurrentRoute;
     }
 
     /**
