@@ -68,7 +68,7 @@ Mask for showing a single model.
 
 
 ### mask.edit
-```
+```Blade
 <x-admin::mask.edit :name="$name" :model="$model">{slot}</x-admin::mask.edit>
 ```
 
