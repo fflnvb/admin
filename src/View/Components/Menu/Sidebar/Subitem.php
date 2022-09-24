@@ -34,12 +34,14 @@ class Subitem extends Component
         if(request()->routeIs($subitem['route'])) {
             $this->active = true;
         }
-        if(is_string($subitem['alias'])) {
-            $subitem['alias'] = [$subitem['alias']];
-        }
-        foreach ($subitem['alias'] as $alias) {
-            if(request()->routeIs($alias)) {
-                $this->active = true;
+        if(isset($item['alias'])) {
+            if(is_string($subitem['alias'])) {
+                $subitem['alias'] = [$subitem['alias']];
+            }
+            foreach ($subitem['alias'] as $alias) {
+                if(request()->routeIs($alias)) {
+                    $this->active = true;
+                }
             }
         }
     }
