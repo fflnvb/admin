@@ -37,32 +37,31 @@ class Subitem extends Component
      *
      * @return bool
      */
-    public function isCurrentRoute($items)
+    public function isCurrentRoute($item)
     {
         $isCurrentRoute = false;
-        foreach($items as $item) {
-            // Check direct match
-            if(request()->routeIs($item['route'])) {
-                $isCurrentRoute = true;
-            }
-            // Check alias match
-            if(isset($item['alias'])) {
-                if(is_string($item['alias'])) {
-                    $item['alias'] = [$item['alias']];
-                }
-                foreach ($item['alias'] as $alias) {
-                    if(request()->routeIs($alias)) {
-                        $isCurrentRoute = true;
-                    }
-                }
-            }
-            // Check subitem for Resource Controllers being references
-            if(isset($item['resource']) && $item['resource']) {
-                $subRoute = Str::beforeLast($item['route'], '.');
-                $isCurrentRoute = Str::contains(request()->route()->getName(), $subRoute);
-            }
 
+        // Check direct match
+        if(request()->routeIs($item['route'])) {
+            $isCurrentRoute = true;
         }
+        // Check alias match
+        if(isset($item['alias'])) {
+            if(is_string($item['alias'])) {
+                $item['alias'] = [$item['alias']];
+            }
+            foreach ($item['alias'] as $alias) {
+                if(request()->routeIs($alias)) {
+                    $isCurrentRoute = true;
+                }
+            }
+        }
+        // Check subitem for Resource Controllers being references
+        if(isset($item['resource']) && $item['resource']) {
+            $subRoute = Str::beforeLast($item['route'], '.');
+            $isCurrentRoute = Str::contains(request()->route()->getName(), $subRoute);
+        }
+        
         return $isCurrentRoute;
     }
 
