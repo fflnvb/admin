@@ -38,12 +38,14 @@ class AdminServiceProvider extends ServiceProvider
         $this->loadViewsFrom(self::VIEWS_PATH, 'admin');
 
         $this->registerComponents();
-        Route::middleware(['web'])->group(function () {
-            Route::prefix('admin')
-                ->name('admin.')
-                ->namespace('App\Http\Controllers')
-                ->group(base_path('routes/admin.php'));
-        });
+        if(file_exists(base_path() . '/routes/admin.php')) {
+            Route::middleware(['web'])->group(function () {
+                Route::prefix('admin')
+                    ->name('admin.')
+                    ->namespace('App\Http\Controllers')
+                    ->group(base_path('routes/admin.php'));
+            });
+        }
         $this->loadTranslationsFrom(self::LANG_PATH, 'admin');
     }
 
@@ -78,7 +80,7 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->publishes([
             self::CONFIG_FILE => config_path('admin.php'),
-            self::ROUTES_FILE => base_path() . '/routes',
+            self::ROUTES_FILE => base_path() . '/routes/admin.php',
             self::PUBLIC_PATH => public_path(),
         ], 'fflnvb-admin');
     }

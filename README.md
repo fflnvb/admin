@@ -1,5 +1,8 @@
 # FFLNVB.admin
 
+
+TODO: Auth Middleware needs reroute to admin.Login
+Also clear cache after installation
 <p align="center">
 <img src="https://img.shields.io/badge/Laravel%20-9.26.1-red.svg?logo=laravel" alt="Laravel 9">&nbsp;
 <img src="https://img.shields.io/badge/PHP-8.1.10-blue.svg?logo=php" alt="PHP 8.1.10">&nbsp;
