@@ -78,7 +78,7 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->publishes([
             self::CONFIG_FILE => config_path('admin.php'),
-            self::ROUTES_FILE => base_path() . '/routes/admin.php',
+            self::ROUTES_FILE => base_path() . '/routes',
             self::PUBLIC_PATH => public_path(),
         ], 'fflnvb-admin');
     }
