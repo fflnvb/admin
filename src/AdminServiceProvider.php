@@ -85,7 +85,6 @@ class AdminServiceProvider extends ServiceProvider
             self::CONFIG_FILE => config_path('admin.php'),
             self::ROUTES_FILE => base_path() . '/routes/admin.php',
             self::PUBLIC_PATH => public_path(),
-            self::TRAIT_PATH =>  base_path() . '/src/Traits/PrettyDateTrait.php',
         ], 'fflnvb-admin');
     }
 }
