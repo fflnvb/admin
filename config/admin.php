@@ -13,6 +13,11 @@ return [
         'sidebar' => [
             'name' => 'Administration',
             'items' => [
+                'dashboard' => [
+                    'name' => 'Dashboard',
+                    'icon' => 'speedometer',
+                    'route' => 'dashboard'
+                ],
                 //'uniqueName' => [
                 //    'name' => 'displayName',
                 //    'icon' => 'bootstrapIcon',
