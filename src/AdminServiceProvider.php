@@ -16,6 +16,9 @@ class AdminServiceProvider extends ServiceProvider
     private const ROUTES_FILE = __DIR__.'/../routes/admin.php';
 
     /** @var string */
+    private const TRAIT_PATH = __DIR__.'/Traits/PrettyDateTrait.php';
+
+    /** @var string */
     private const VIEWS_PATH = __DIR__.'/../resources/views';
 
     /** @var string */
@@ -82,6 +85,7 @@ class AdminServiceProvider extends ServiceProvider
             self::CONFIG_FILE => config_path('admin.php'),
             self::ROUTES_FILE => base_path() . '/routes/admin.php',
             self::PUBLIC_PATH => public_path(),
+            self::TRAIT_PATH =>  base_path() . '/src/Traits/PrettyDateTrait.php',
         ], 'fflnvb-admin');
     }
 }
