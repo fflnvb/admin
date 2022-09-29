@@ -62,6 +62,9 @@ class Item extends Component
     {
         $isCurrentRoute = false;
         foreach($items as $item) {
+            // Prevent further inactive Elements in subitems to disable extended state
+            if($isCurrentRoute) continue;
+            
             // Check direct match
             if(request()->routeIs($item['route'])) {
                 $isCurrentRoute = true;
