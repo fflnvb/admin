@@ -16,7 +16,7 @@ return [
                 'dashboard' => [
                     'name' => 'Dashboard',
                     'icon' => 'speedometer',
-                    'route' => 'dashboard'
+                    'route' => 'admin.dashboard'
                 ],
                 //'uniqueName' => [
                 //    'name' => 'displayName',
