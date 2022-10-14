@@ -4,7 +4,7 @@
     <a href="{{ route('admin.' . $routeName . '.create') }}" role="button" class="btn btn-success">{{ __('admin::directives.createWithName', ['name' => $single]) }}</a>
     @endif
 </div>
-@if ($prelist->isNotEmpty())
+@if (isset($prelist))
     {{ $prelist }}
 @endif
 @if (session('success'))
