@@ -32,6 +32,6 @@ class Item extends Component
      */
     public function render()
     {
-        return view('admin::components.mask.index');
+        return view('admin::components.mask.item');
     }
 }
