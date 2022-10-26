@@ -22,6 +22,8 @@ class Item extends Component
     {
         if(!empty($color)){
             $this->color = 'bg-' . $color;
+        } else {
+            $this->color = $color;
         }
     }
 
