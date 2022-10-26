@@ -12,6 +12,7 @@ return [
 
     'editWithName' => ':name bearbeiten',
     'edit' => 'bearbeiten',
+    'show' => 'anzeigen',
     'read' => 'lesen',
     
     'delete' => 'Löschen',

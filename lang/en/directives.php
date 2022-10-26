@@ -12,6 +12,7 @@ return [
 
     'editWithName' => 'Edit :Name',
     'edit' => 'edit',
+    'show' => 'show',
     'read' => 'read',
     
     'delete' => 'Delete',
