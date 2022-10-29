@@ -31,7 +31,7 @@
     <div class="d-flex justify-content-start mt-4">
         <button type="submit" class="btn btn-success me-1"><i class="bi bi-check-lg"></i> <b>{{ __('admin::directives.save') }}</b></button>
         @if(route('admin.' . $routeName . '.show', $model->id))
-            <a href="{{ route('admin.' . $routeName . '.show', $model->id) }}" role="button" class="btn btn-outline-secondary">{{ __('admin::directives.show') }}</a>
+            <a href="{{ route('admin.' . $routeName . '.show', $model->id) }}" role="button" class="btn btn-outline-secondary">{{ __('admin::directives.back') }}</a>
         @else
             <a href="{{ route('admin.' . $routeName . '.index') }}" role="button" class="btn btn-outline-secondary">{{ __('admin::directives.back') }}</a>
         @endif
