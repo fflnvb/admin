@@ -2,15 +2,21 @@
     {{-- Headline --}}
     <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4">
         <h1 class="m-0 flex-grow-1 mb-1 mb-md-0">{{ $name }} {{ __('lesen') }}</h1>
-        @isset($model->id)
-        <form action="{{ route('admin.' . $routeName . '.destroy', $model->id) }}" method="POST">
-            @method('DELETE')
-            @csrf
-            <button type="submit" onclick="return confirm('{{ __('Bist du dir sicher?')}}')"
-                class="btn btn-danger"><b>{{ __('Löschen') }}</b>
-            </button>
-        </form>
-        @endisset
+        <span>
+            @if (route('admin.' . $routeName . 'edit'))
+                <a role="button" class="btn btn-outline-secondary"><b>{{ __('admin::directives.edit') }}</b></a>
+            @endif
+            @isset($model->id)
+                <form action="{{ route('admin.' . $routeName . '.destroy', $model->id) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" onclick="return confirm('{{ __('admin::directives.areYouSure')}}')"
+                        class="btn btn-danger"><b>{{ __('admin::directives.delete') }}</b>
+                    </button>
+                </form>
+            @endisset
+        </span>
+        
     </div>
     {{-- Cards --}}
     <div class="row gy-3">
