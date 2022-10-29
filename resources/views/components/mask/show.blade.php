@@ -7,7 +7,7 @@
                 <a role="button" class="btn btn-outline-secondary"><b>{{ __('admin::directives.edit') }}</b></a>
             @endif
             @isset($model->id)
-                <form action="{{ route('admin.' . $routeName . '.destroy', $model->id) }}" method="POST">
+                <form action="{{ route('admin.' . $routeName . '.destroy', $model->id) }}" method="POST" class="d-inline-block">
                     @method('DELETE')
                     @csrf
                     <button type="submit" onclick="return confirm('{{ __('admin::directives.areYouSure')}}')"
