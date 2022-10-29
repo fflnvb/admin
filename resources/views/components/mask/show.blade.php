@@ -4,7 +4,9 @@
         <h1 class="m-0 flex-grow-1 mb-1 mb-md-0">{{ $name }} {{ __('lesen') }}</h1>
         <span>
             @if (route('admin.' . $routeName . '.edit', $model->id))
-                <a role="button" class="btn btn-outline-secondary"><b>{{ __('admin::directives.edit') }}</b></a>
+                <a href="{{ route('admin.' . $routeName . '.edit', $model->id) }}" role="button" class="btn btn-outline-secondary">
+                    <b>{{ __('admin::directives.edit') }}</b>
+                </a>
             @endif
             @isset($model->id)
                 <form action="{{ route('admin.' . $routeName . '.destroy', $model->id) }}" method="POST" class="d-inline-block">
