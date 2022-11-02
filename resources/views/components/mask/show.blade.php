@@ -32,7 +32,9 @@
             <div class="col-12 col-lg-4 col-xl-3">
                 <x-admin::mask.info :model="$model"/>
                 @if(isset($subside))
-                    {{ $subside }}
+                    <x-admin::mask.subside>
+                        {{ $subside }}
+                    </x-admin::mask.subside>
                 @endif
             </div>
         @endif
