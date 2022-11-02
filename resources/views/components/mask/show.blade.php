@@ -29,10 +29,12 @@
             </div>
         </div>
         @if(isset($model->id))
-            <x-admin::mask.info :model="$model"/>
-        @endif
-        @if(isset($subside))
-            {{ $subside }}
+            <div class="col-12 col-lg-4 col-xl-3">
+                <x-admin::mask.info :model="$model"/>
+                @if(isset($subside))
+                    {{ $subside }}
+                @endif
+            </div>
         @endif
     </div>
     {{-- Call to action --}}
