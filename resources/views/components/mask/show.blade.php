@@ -31,6 +31,9 @@
         @if(isset($model->id))
             <x-admin::mask.info :model="$model"/>
         @endif
+        @if(isset($subside))
+            {{ $subside }}
+        @endif
     </div>
     {{-- Call to action --}}
     <div class="d-flex justify-content-start mt-4">
