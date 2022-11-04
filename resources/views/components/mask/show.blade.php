@@ -28,7 +28,7 @@
                 {{ $slot }}
             </div>
         </div>
-        @if(isset($model->id))
+        @isset($model->id)
             <div class="col-12 col-lg-4 col-xl-3">
                 <x-admin::mask.info :model="$model"/>
                 @if(isset($subside))
@@ -37,7 +37,7 @@
                     </x-admin::mask.subside>
                 @endif
             </div>
-        @endif
+        @endisset
     </div>
     {{-- Call to action --}}
     <div class="d-flex justify-content-start mt-4">
