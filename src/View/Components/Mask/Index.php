@@ -28,15 +28,31 @@ class Index extends Component
     public $routeName;
 
     /**
+    * Create route overwrite
+    *
+    * @var string
+    */
+    public $customCreate;
+
+    /**
+    * Route for back navigation
+    *
+    * @var string
+    */
+    public $withBack;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $routeName, $single)
+    public function __construct($name, $routeName, $single, $customCreate = null, $withBack = null)
     {
         $this->name = $name;
         $this->routeName = $routeName;
         $this->single = $single;
+        $this->customCreate = $customCreate;
+        $this->withBack = $withBack;
     }
 
     /**
