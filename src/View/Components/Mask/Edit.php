@@ -33,11 +33,11 @@ class Edit extends Component
      *
      * @return void
      */
-    public function __construct($name, $model)
+    public function __construct($name, $model, $routeName = null)
     {
         $this->name = $name;
         $this->model = $model;
-        $this->routeName = Str::plural(Str::lower(class_basename($model)));
+        $this->routeName = $routeName ?: Str::plural(Str::lower(class_basename($model)));
     }
 
     /**
