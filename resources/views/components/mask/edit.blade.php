@@ -13,7 +13,15 @@
     @endisset
 </div>
 {{-- Cards --}}
-<form method="POST" action="{{ isset($model->id) ? route('admin.' . $routeName . '.update', $model->id) : route('admin.' . $routeName . '.store') }}">
+<form method="POST" action="
+    {{ isset($model->id) ? 
+        route('admin.' . $routeName . '.update', $model->id) : 
+        ( isset($shallow) ?
+            route('admin.' . $shallow . '.store') :
+            route('admin.' . $routeName . '.store')
+        )
+    }}
+">
     @csrf
     @isset($model->id) @method('PUT') @endisset
     <div class="row gy-3">

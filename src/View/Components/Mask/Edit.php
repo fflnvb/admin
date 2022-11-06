@@ -22,6 +22,13 @@ class Edit extends Component
     public $routeName;
 
     /**
+    * Fixed Route for shallow nesting, important for store route
+    *
+    * @var string
+    */
+    public $shallow;
+
+    /**
     * Model data
     *
     * @var string
@@ -33,11 +40,12 @@ class Edit extends Component
      *
      * @return void
      */
-    public function __construct($name, $model, $routeName = null)
+    public function __construct($name, $model, $routeName = null, $shallow = null)
     {
         $this->name = $name;
         $this->model = $model;
         $this->routeName = $routeName ?: Str::plural(Str::lower(class_basename($model)));
+        $this->sha1low = $shallow;
     }
 
     /**
