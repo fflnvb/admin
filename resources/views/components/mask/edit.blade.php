@@ -16,8 +16,8 @@
 <form method="POST" action="
     {{ isset($model->id) ? 
         route('admin.' . $routeName . '.update', $model->id) : 
-        ( isset($shallow) ?
-            route('admin.' . $shallow . '.store') :
+        ( isset($shallow) && isset($shallowId) ?
+            route('admin.' . $shallow . '.store', $shallowId) :
             route('admin.' . $routeName . '.store')
         )
     }}

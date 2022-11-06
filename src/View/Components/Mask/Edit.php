@@ -29,6 +29,13 @@ class Edit extends Component
     public $shallow;
 
     /**
+    * Id for parent resource of shallow nesting
+    *
+    * @var string
+    */
+    public $shallowId;
+
+    /**
     * Model data
     *
     * @var string
@@ -40,12 +47,13 @@ class Edit extends Component
      *
      * @return void
      */
-    public function __construct($name, $model, $routeName = null, $shallow = null)
+    public function __construct($name, $model, $routeName = null, $shallow = null, $shallowId = null)
     {
         $this->name = $name;
         $this->model = $model;
         $this->routeName = $routeName ?: Str::plural(Str::lower(class_basename($model)));
         $this->sha1low = $shallow;
+        $this->sha1lowId = $shallowId;
     }
 
     /**
