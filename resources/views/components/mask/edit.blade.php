@@ -16,10 +16,7 @@
 <form method="POST" action="
     {{ isset($model->id) ? 
         route('admin.' . $routeName . '.update', $model->id) : 
-        ( isset($shallow) && isset($shallowId) ?
-            route('admin.' . $shallow . '.store', $shallowId) :
-            route('admin.' . $routeName . '.store')
-        )
+        route('admin.' . $shallow . '.store', $shallowId)
     }}
 ">
     @csrf
@@ -48,7 +45,7 @@
         @if(isset($model->id) && Route::has('admin.' . $routeName . '.show'))
             <a href="{{ route('admin.' . $routeName . '.show', $model->id) }}" role="button" class="btn btn-outline-secondary">{{ __('admin::directives.back') }}</a>
         @else
-            <a href="{{ route('admin.' . $shallow . '.index') }}" role="button" class="btn btn-outline-secondary">{{ __('admin::directives.back') }}</a>
+            <a href="{{ route('admin.' . $shallow . '.index', $shallowId) }}" role="button" class="btn btn-outline-secondary">{{ __('admin::directives.back') }}</a>
         @endif
     </div>
 </form>
