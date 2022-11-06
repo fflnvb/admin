@@ -52,7 +52,7 @@ class Edit extends Component
         $this->name = $name;
         $this->model = $model;
         $this->routeName = $routeName ?: Str::plural(Str::lower(class_basename($model)));
-        $this->shallow = $shallow;
+        $this->shallow = $shallow ?: $this->routeName;
         $this->shallowId = $shallowId;
     }
 
