@@ -28,13 +28,6 @@ class Index extends Component
     public $routeName;
 
     /**
-    * Create route overwrite
-    *
-    * @var string
-    */
-    public $customCreate;
-
-    /**
     * Create route parameter for overwrite
     *
     * @var string
