@@ -1,6 +1,6 @@
 <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4">
     <h1 class="m-0 flex-grow-1 mb-1 mb-md-0">{{ $name }}</h1>
-    <a href="{{ route('admin' . $routeName . 'create', $createParameter) }}" role="button" class="btn btn-success">{{ __('admin::directives.createWithName', ['name' => $single]) }}</a>
+    <a href="{{ route('admin.' . $routeName . '.create', $createParameter) }}" role="button" class="btn btn-success">{{ __('admin::directives.createWithName', ['name' => $single]) }}</a>
 </div>
 @if (isset($prelist))
     {{ $prelist }}
