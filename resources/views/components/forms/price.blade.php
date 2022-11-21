@@ -4,7 +4,7 @@
         <label for="{{ $id }}">{{ $label }}{{ $mandatory ? '*' : ''}}</label>
     </div>
     <span class="input-group-text">{{ $currency }}</span>
-    <div class="invalid-feedback">
+</div>
+<div class="invalid-feedback">
         {{ __('admin::enterValidValue') }}
-    </div>
 </div>
