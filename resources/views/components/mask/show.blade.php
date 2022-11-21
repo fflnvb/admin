@@ -3,7 +3,7 @@
     <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4">
         <h1 class="m-0 flex-grow-1 mb-1 mb-md-0">{{ $name }} {{ __('lesen') }}</h1>
         <span>
-            @if (route('admin.' . $routeName . '.edit', $model->id))
+            @if (Route::has('admin.' . $routeName . '.edit', $model->id))
                 <a href="{{ route('admin.' . $routeName . '.edit', $model->id) }}" role="button" class="btn btn-outline-secondary">
                     <b>{{ __('admin::directives.edit') }}</b>
                 </a>
