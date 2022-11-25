@@ -28,11 +28,18 @@ class Index extends Component
     public $routeName;
 
     /**
-    * Create route parameter for overwrite
+    * Create route model parameter for overwrite
     *
     * @var string
     */
-    public $createParameter;
+    public $createModel;
+
+    /**
+    * Create route id parameter for overwrite
+    *
+    * @var string
+    */
+    public $createId;
 
     /**
     * Route for back navigation
@@ -46,13 +53,13 @@ class Index extends Component
      *
      * @return void
      */
-    public function __construct($name, $routeName, $single, $customCreate = null, $createParameter = null, $withBack = null)
+    public function __construct($name, $routeName, $single, $createModel = null, $createId = null, $withBack = null)
     {
         $this->name = $name;
         $this->routeName = $routeName;
         $this->single = $single;
-        $this->customCreate = $customCreate;
-        $this->createParameter = $createParameter;
+        $this->createModel = $createModel;
+        $this->createId = $createId;
         $this->withBack = $withBack;
     }
 
